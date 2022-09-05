@@ -1,0 +1,57 @@
+// 我個人的基本頁面設定
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: baseline;
+}
+
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: 1.5;
+
+  overflow-x: hidden !important;
+  overflow-y: auto;
+  // 透過以上語法設定，隱藏了 x 軸的卷軸，同時讓 y 軸的卷軸自動延伸，這樣就完成囉！
+  // 預料之外的x軸 很麻煩直接隱藏吧
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+sub {
+  vertical-align: sub;
+}
+
+.container {
+  max-width: 1110px !important;
+  margin: 0 auto;
+
+  height: 100%;
+  /* padding-left: 16px;
+  padding-right: 16px; */
+}
+
+/* .fa {
+  font-weight: 900;
+  font-size: x-large !important;
+} */
+
+/* ------------------------------------------------------------------- */
+/* base setting by me */
+
+* {
+  //word-break: break-word; // 會根據單字斷行 但如果寬度不夠會自動換行 一般都用這 IE不支援 如果字串太長 會超出範圍(等同預設值)
+  font-family: Arial, "微軟正黑體" !important;
+  // font-family: 'Noto Sans TC', sans-serif !important;
+}

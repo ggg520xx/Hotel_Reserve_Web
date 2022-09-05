@@ -1,0 +1,1041 @@
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+}
+
+// 輪播項目
+.carousel-item {
+    height: auto;
+    width: 100vw;
+    @include backdrop(center, no-repeat, cover);
+
+    p {
+        // backdrop-filter: blur(1px);  毛玻璃效果
+        background-color: rgba($kuro, 0.5);
+
+        // 100% a做連結
+        height: 100%;
+        width: 100%;
+
+        color: $shiro;
+        z-index: 1;
+        font-size: 24px;
+        writing-mode: vertical-lr;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s ease-in-out;
+        // 原本是甜點電商的遮罩
+        // &:hover {
+        //     font-weight: 700;
+        //     color: $main_color;
+        //     background-color: rgba($main_color, 0.8);
+        // }
+    }
+}
+
+// .img-fluid-bg {
+//     max-width: 100%;
+//     height: auto;
+//     width: 100%;
+// }
+
+//輪播指示 原本是細條 改為圓點
+.carousel-indicators {
+
+    z-index: 10;
+    justify-content: flex-start;
+    // margin-left: 0;
+    // margin-right: 0;
+
+    //傳家三松要求推到外處 指示點往下移
+    //指示點推到外處
+    top: 92%;
+    // right: 63%;
+
+    // @media (min-width: 1200px) {
+    //     top: 105%;
+    // }
+
+    button {
+        border-radius: 100%;
+        //改變大小
+        width: 12px !important;
+        height: 12px !important;
+
+        z-index: 10;
+
+        //間距
+        margin-right: 8px;
+        margin-left: 8px;
+    }
+}
+
+main {
+    // border: 1px solid red;
+
+    z-index: 5;
+    position: absolute;
+    /* 上層已預設是relative了 */
+
+    max-height: 550px;
+    max-width: 1100px;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+
+    color: white;
+
+
+    .index_zone {
+        display: flex;
+        justify-content: space-between;
+        // align-items: center;
+        height: 100%;
+
+        // border: 1px solid blue;
+
+        .left_side {
+            // width: 100%;
+            // border: 1px solid red;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            address {
+                a {
+                    margin-top: 6px;
+                    font-size: 12px;
+                    display: block;
+                    color: darken($shiro, 15%)
+                }
+            }
+        }
+
+        .right_side {
+            // border: 1px solid green;
+
+            height: 100%;
+
+            // min-width: 500px;
+            // 測試 等等可改掉
+
+            .gap {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+
+                justify-content: end;
+
+                .img_zone {
+                    max-height: 275px;
+                    max-width: 275px;
+                    // width: 33.33%;
+                    // border: 1px solid orange;
+
+                    a {
+                        position: relative;
+                        color: $shiro;
+                        font-weight: 500;
+                        font-size: 19px;
+
+
+                        img {
+                            display: block;
+                            width: 275px;
+                            height: 275px;
+                        }
+
+                        .text_show {
+                            width: 100%;
+                            height: 100%;
+                            position: absolute;
+                            display: inline-block;
+                            top: 0;
+                            text-align: center;
+
+
+
+                            line-height: 275px;
+
+                            color: transparent;
+                            font-size: 19px;
+                            transition: background-color .15s ease-in
+                        }
+
+                        .text_show:hover {
+
+
+                            display: block;
+                            color: inherit;
+                            background-color: rgba($main_color, .6);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ui_name {
+    margin-bottom: 6px;
+    font-size: 12px;
+    display: block;
+    color: darken($shiro, 15%);
+    text-align: end;
+}
+
+// --------------------------------------------
+.room_info {
+    display: flex;
+    // border: 1px solid orange;
+    // height: 100%;
+}
+
+.room_left {
+    min-width: 573px;
+    max-width: 30%;
+    // height: 500px;
+
+    // border: 2px solid red;
+    // min-height: 768px;   //之後再刪掉
+
+    position: relative;
+    // position: fixed;
+}
+
+.room_right {
+    max-width: 70%;
+}
+
+// -owl輪播---------------------
+.owl-carousel {
+    position: relative;
+}
+
+// 內輪播商品控制調整
+.owl-item-control {
+    img {
+        // width: auto;
+        // height: auto;
+        min-height: 768px;
+        height: 100vh;
+        object-fit: cover;
+        z-index: 0;
+    }
+}
+
+// 消除套件產生的細微0.25rem邊距
+.img-thumbnail {
+    padding: 0;
+}
+
+// 輪播套件JS自己生成的調整code抓不到 自己新增修改
+.owl-carousel .owl-item img {
+    min-width: 573px;
+}
+
+.owl-dots {
+    // min-height: 300px;
+    position: absolute;
+    // top: 50%;
+    bottom: 18%;
+    z-index: 1;
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+    // background-color: $main_color;
+    // background: darken($main_color, 80%);
+    background-color: darken($color: $main_color, $amount: 70%);
+}
+
+.owl-theme .owl-dots .owl-dot span {
+    border: 1px solid $main_color;
+    // 參考偽元素紅點  不需要
+    // &:before {
+    //     content: "";
+    //     display: inline-block;
+    //     width: 11px;
+    //     height: 11px;
+    //     background-color: darken($color: red, $amount: 20%);
+    //     border-radius: 50%;
+    //     border: 1px solid blue;
+    //     margin-right: 5px;
+    // }
+}
+
+// ----------------------
+// 預定booking按鈕位置
+.booking_position {
+    z-index: 3;
+    position: absolute;
+    // border: 1px solid green;
+    // height: 50px;
+    // width: 50px;
+    // top: 50%;
+    right: 0;
+    bottom: 53%;
+    left: 0;
+    margin: auto;
+
+    p {
+        text-align: center;
+        color: $main_color;
+        font-weight: 600;
+
+        font-size: 16px;
+
+        span {
+            color: $main_color;
+            font-size: 36px;
+
+            &:last-child {
+                font-size: 20px;
+
+                &:before {
+                    content: "/";
+                    font-weight: 500;
+                    display: inline-block;
+                    padding-left: 18px;
+                    padding-right: 18px;
+                    // width: 10px;
+                    // height: 10px;
+                    // background-color: darken($color: red, $amount: 20%);
+                    // border-radius: 50%;
+                    // margin-right: 5px;
+                }
+            }
+
+        }
+    }
+}
+
+
+
+// 預定按鈕(BOOKUNG效果還沒調好
+// ---------------------------
+.book_btn {
+    border: 1px solid $main_color;
+    font-family: Open Sans;
+    // font-weight: 600;
+    font-size: 20px;
+    color: #fff;
+    background-color: #38470b;
+    display: block;
+    margin: 10px auto 0;
+    padding: 8.5px 63.5px;
+    // line-height: 27px;
+    outline: none;
+
+
+    &:hover {
+        background-color: #949c7c
+    }
+
+    &:active {
+        -webkit-transform: translateY(3px);
+        transform: translateY(3px)
+    }
+}
+
+// -----------------------------
+// 用來做圖片燈箱link  (沒用到
+// .photo-link {
+//     display: inline-block;
+//     width: 100%;
+//     height: 95%;
+//     top: 0;
+//     left: 0;
+//     // position: absolute;
+//     border: 1px solid burlywood;
+// }
+
+// 遮罩白漸層外圍  本來輪播有做hover調整後就取消了 現在變一小塊漸層效果
+.photo-txt {
+    // border: 1px solid burlywood;
+    // color: #fff;
+    // border: 1px solid red;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 80px 100px; // 忘記作用是啥了 控制內連
+    position: absolute;
+    top: 80%;
+    bottom: 0; // 位置框去做漸層 打開border就知道這層做什麼
+    left: 0;
+    right: 0;
+    z-index: 1;
+    // background: radial-gradient(transparent 80%, rgba(0, 0, 0, 0.7) 100%);
+    // transition: background .4s;
+
+    // border: 1px solid red;
+    // background: linear-gradient(transparent, white 80%);
+    background: linear-gradient(transparent, white 50%);
+
+
+    @media (max-height: 1500px) {
+        top: 70%;
+    }
+
+    @media (max-height: 900px) {
+        top: 40%;
+    }
+
+
+
+
+
+}
+
+// .photo-txt:hover {
+//     background: radial-gradient(transparent 50%, rgba(0, 0, 0, 0.7) 100%);
+// }
+
+// ----------------------------
+
+
+// 返回上頁位置定位
+.backpage {
+    z-index: 2;
+    position: absolute;
+    // border: 1px solid red;
+
+    font-size: 14px;
+    font-weight: 700;
+    color: $main_color;
+
+    top: 87px;
+    left: 146px;
+    // bottom: 0;
+    // right: 0;
+    // padding: 87px 146px;
+
+    &:before {
+
+        content: '❮';
+    }
+
+    &:hover {
+        color: $sub_color;
+    }
+}
+
+// 燈箱的張數怪怪 暴力隱藏
+.lb-number {
+    display: none !important;
+}
+
+
+
+.priceStyle {
+
+    font-size: 30px;
+    color: $main_color;
+    font-weight: 600;
+}
+
+
+.proitem-detail {
+    padding: 8rem 8rem 2rem 2rem;
+    // width: 115%;
+
+    // min-width: 500px;
+    .proitem-sort {
+
+        &:not(:last-child),
+        >*:not(:last-child) {
+            padding-bottom: .75rem;
+        }
+
+        .room_title {
+
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+
+            h1 {
+                font-size: 40px;
+                // margin-top: -5px;
+                // font-weight: bold;
+                color: $main_color;
+            }
+
+            small {
+                font-size: 14px;
+                color: $main_color;
+            }
+        }
+
+        .proitem-info {
+
+            padding: 1px;
+
+            .info-list {
+
+                color: $main_color;
+                font-size: 14px;
+                line-height: 24px;
+                font-weight: 300;
+            }
+
+
+
+        }
+
+
+
+        // &.room_service {
+        //     margin-top: 1rem;
+        // }
+
+        .sort-title {
+            font-size: 95%;
+            overflow: hidden;
+            font-style: italic;
+            text-align: center;
+            $pseudo: (before: left, after: right);
+
+            span {
+                padding: 0 1rem;
+                position: relative;
+                color: $minor-iro;
+                display: inline-block;
+
+                @each $i,
+                $item in $pseudo {
+                    &::#{$i} {
+                        content: '';
+                        top: 50%;
+                        left: auto;
+                        right: auto;
+                        width: 50vw;
+                        position: absolute;
+                        border-top: 1px solid $minor-iro;
+                        #{$item}: 100% !important;
+                    }
+                }
+            }
+        }
+
+        // 條列項目區
+        .sort-item {
+            // font-size: 95%;
+
+            // >*:not(:last-child) {
+            //     margin-bottom: .25rem;
+            // }
+
+            // >p {
+            //     font-weight: bold;
+            // }
+
+            // &:not(:last-child) {
+            //     margin-bottom: .5rem;
+            // }
+
+            // .sort-kind {
+            //     >* {
+            //         margin-right: .15rem;
+            //         margin-bottom: .1rem;
+            //     }
+
+            //     .thumbnail-list {
+            //         cursor: pointer;
+            //         padding: 3px 8px;
+            //         object-fit: cover;
+            //         display: inline-block;
+            //         border: 1px solid transparent;
+            //         transition: all .3s ease-in-out;
+            //         border-color: darken($shiro, 15%);
+
+            //         &:hover,
+            //         &.active {
+            //             color: $shiro;
+            //             background-color: $minor-iro;
+            //             border-color: darken($shiro, 15%);
+            //         }
+            //     }
+            // }
+
+            .supply-content {
+                // border: 1px solid red;
+                padding: 1rem;
+                // background-color: rgba($minor-iro, .15);
+
+                li {
+                    font-weight: 300;
+                    font-size: 14px;
+
+                    &:not(:last-child) {
+                        margin-bottom: .25rem;
+                    }
+                }
+            }
+
+            .supply-icon-zone {
+                // border: 1px solid red;
+                min-height: 164px;
+                display: flex;
+                flex-wrap: wrap;
+
+                // padding: 20px;
+                li {
+                    flex-basis: 14%;
+                    pointer-events: none;
+
+                    .main-icon {
+                        display: inline-block;
+                        text-align: center;
+                        width: 56px;
+                        // height: 60px;
+
+                        min-height: 82px;
+                    }
+
+                    .status-icon {
+                        height: 15px;
+                        width: 15px;
+                        vertical-align: top;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+#lightbox-container-image-box {
+    max-width: 970px; // Or your max-width
+}
+
+#lightbox-container-image img {
+    max-width: 950px; // (your max width - 20)
+}
+
+// -----------------------------------
+// 服務項目的icon
+// 做判斷上class
+.hide_icon {
+    opacity: .3;
+}
+
+
+// 日期選取 暴力調整
+// ----------------------------------------------
+
+.datepicker__inner {
+    border: 1px solid $main_color;
+}
+
+.date_pick {
+    padding: 2rem;
+}
+
+.datepicker {
+    width: 90%;
+}
+
+.datepicker__month {
+    width: 320px;
+}
+
+.datepicker__month {
+    tbody {
+        height: 210px;
+    }
+
+}
+
+.datepicker__months {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.empty_p {
+    font-size: 14px;
+    color: $main_color;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+
+// 點擊跳出的做覆蓋
+.cover {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+
+    min-width: 1366px;
+    min-height: 768px;
+    z-index: 15;
+
+    width: 100vw;
+    height: 100vh;
+
+    // background-color: #FFFFFF;  //父層下了這個 子層會被透明改掉 且無法修正 
+    // opacity: .8;
+
+    backdrop-filter: blur(2px);
+    background-color: rgba(255, 255, 255, .1);
+    // background-color: hsla(0, 0%, 85.5%, .1);  // 一樣的白透明寫法
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 84px 128px;
+}
+
+
+.order_info {
+    width: 100%;
+    height: 100%;
+    background-color: #949c7c;
+
+    display: flex;
+
+    .left_order {
+        width: 35%;
+        height: 100%;
+        background-color: $main_color;
+
+        padding: 40px 50px;
+
+        .order_keyinfo {
+            // display: flex;
+            // justify-content: space-between;
+            width: 100%;
+            // margin-top: 8px;
+
+            div {
+                position: relative;
+                width: 100%;
+
+                p {
+                    font-size: 20px;
+                    font-weight: 600;
+
+                    color: $shiro;
+                }
+
+                //input 模塊化
+                .basic-slide {
+                    height: 38px;
+                    width: 100%;
+                    display: inline-block;
+                    // min-width: 250px;
+                    padding: 10px 0 10px 15px;
+                    font-family: "Open Sans", sans;
+                    font-weight: 400;
+                    color: #377d6a;
+                    background: $shiro;
+                    border: 0;
+                    outline: 0;
+                    text-indent: 70px; // Arbitrary.
+                    transition: all 0.3s ease-in-out;
+
+                    &::-webkit-input-placeholder {
+                        color: $main_color;
+                        text-indent: 0;
+                        font-weight: 300;
+                    }
+                }
+
+                .basic-slide:focus,
+                .basic-slide:active {
+                    color: #377d6a;
+                    text-indent: 0;
+                    // background: $sub_color;
+                    background: lighten($color: $sub_color, $amount: 10%);
+                    border-top-left-radius: 0;
+                    border-bottom-left-radius: 0;
+
+                    &::-webkit-input-placeholder {
+                        color: $shiro;
+                    }
+
+                    +label {
+                        transform: translateX(-100%);
+                    }
+                }
+            }
+
+            // .submit_btn {
+            //   min-width: 64px;
+            //   height: 56px;
+            //   background-color: $adorn_color;
+            //   border: none;
+            // }
+
+            #input_start,
+            #input_end {
+                height: 38px;
+                width: 100%;
+                text-align: left;
+                font-weight: 600;
+                padding: 0 10px;
+                border: 1px solid $shiro;
+                line-height: 38px;
+                color: $main_color;
+                display: block;
+                font-size: 16px;
+
+                &:after {
+                    content: "▾";
+                    position: absolute;
+                    right: 10px;
+                }
+            }
+
+
+            .calc_date {
+                font-size: 14px;
+                color: $sub_color;
+                font-weight: 600;
+
+                padding-bottom: 8px;
+                border-bottom: 1px solid $sub_color;
+
+            }
+
+            .order_total {
+                text-align: right;
+                margin-top: 6px;
+
+                p {
+                    font-size: 26px;
+                }
+
+                p:first-child {
+                    font-size: 14px;
+                }
+            }
+
+
+            .order_submit {
+                // border: 1px solid blue;
+                text-align: center;
+
+                button {
+
+                    background-color: $main_color;
+                    color: $shiro;
+
+                    border: 1px solid $shiro;
+                    width: 100%;
+                    padding: 9px 0px;
+
+                    font-size: 18px;
+                    font-weight: 600;
+
+
+                    &:hover {
+                        background-color: $sub_color;
+
+                    }
+
+                }
+            }
+
+            .order_tip {
+
+                // border: 1px solid blue;
+                text-align: center;
+                padding: 9px 0px;
+                font-size: 12px;
+
+                color: $shiro;
+            }
+
+
+        }
+    }
+
+
+    // ------------------------------ 訂單右側
+
+    .right_order {
+        width: 65%;
+        height: 100%;
+        background-color: $shiro;
+
+        padding: 30px 94px 26px 26px;
+
+        position: relative;
+
+
+
+        .exitbtn {
+            background-color: transparent;
+            outline: none;
+            position: absolute;
+            right: 22px;
+            top: 22px;
+            border: none;
+        }
+
+
+        // 右側每一個的標題樣式 統一
+        .order_room_info {
+            // border: 1px solid orange;
+            // height: 150px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+
+            .text_decorate {
+                // 看作控制 位置
+                overflow: hidden;
+                $pseudo: (before: left, after: right);
+                margin-bottom: 8px;
+
+                h2 {
+                    // 主標題
+                    text-align: left; //center
+                    font-weight: bold;
+                    font-size: 24px;
+                    color: $main_color;
+                    position: relative;
+                    display: inline-block;
+                    // padding: 0 0.5rem;
+                    margin-bottom: 8px;
+
+                    @each $i,
+                    $item in $pseudo {
+                        &::#{$i} {
+                            content: '';
+                            top: 50%;
+                            left: auto;
+                            right: auto;
+                            width: 50vw;
+                            position: absolute;
+                            border-top: 1px solid $sub_color;
+                            opacity: .2;
+                            #{$item}: 100% !important;
+                        }
+                    }
+                }
+
+                h3 {
+                    // 主標題
+                    text-align: left; //center
+                    font-weight: 600;
+                    font-size: 16px;
+                    color: $main_color;
+                    position: relative;
+                    display: inline-block;
+                    // padding: 0 0.5rem;
+                    margin-bottom: 8px;
+
+                    @each $i,
+                    $item in $pseudo {
+                        &::#{$i} {
+                            content: '';
+                            top: 50%;
+                            left: auto;
+                            right: auto;
+                            width: 50vw;
+                            position: absolute;
+                            border-top: 1px solid $sub_color;
+                            opacity: .2;
+                            #{$item}: 100% !important;
+                        }
+                    }
+                }
+
+                p {
+                    font-size: 14px;
+                    color: $main_color;
+                }
+            }
+
+
+            // 內訂單右側的圖示服務解說
+            .order_icon_describe {
+                // border: 1px solid blue;
+                display: flex;
+                flex-wrap: wrap;
+                max-width: 530px;
+                align-items: center;
+                padding: 12px 3px;
+
+                li {
+                    padding: 8px;
+                    flex-basis: 12%; //每個的基準 以免有單張圖型過大過寬
+
+                }
+
+            }
+
+            // 內訂單右側的訂房解說
+            .order_info_describe {
+                padding: 0px 16px;
+
+                li {
+                    font-size: 12px;
+                    color: $main_color;
+                    margin-bottom: 6px;
+                }
+            }
+
+
+
+            .order_process {
+                display: flex;
+
+                // border: 1px solid blue;
+                justify-content: space-between;
+
+                .step {
+
+                    border: 1px solid $sub_color;
+
+                    width: 30%;
+                    min-width: 160px;
+                    // height: 136px;
+
+                    border-radius: 0 0 10px 10px;
+
+                    .step_topbg {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 50px;
+                        background-color: $sub_color;
+                        // opacity: .8;
+
+                        img {
+                            height: 32px;
+                            width: 30px;
+                        }
+                    }
+
+                    .step_bottominfo {
+                        font-size: 12px;
+                        color: $main_color;
+
+                        padding: 14px 6px;
+                        text-align: center;
+                    }
+                }
+            }
+
+
+
+
+        }
+
+    }
+
+}

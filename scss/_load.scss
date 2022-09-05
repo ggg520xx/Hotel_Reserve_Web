@@ -1,0 +1,37 @@
+.loading {
+
+    background-color: $shiro;
+    width: 100vw;
+    height: 100vh;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.loader {
+    font-size: 48px;
+    color: $main_color;
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    position: relative;
+}
+
+.loader:after {
+    content: '';
+    height: 4px;
+    width: 0%;
+    display: block;
+    background: $sub_color;
+    animation: 5s lineGrow linear infinite;
+}
+
+@keyframes lineGrow {
+    to {
+        width: 100%;
+    }
+}

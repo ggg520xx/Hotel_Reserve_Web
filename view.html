@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <!-- 燈箱 有附帶2.2X的基本JQ讓她自己能運行 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/css/lightbox.min.css">
+
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+
+    <!-- -------------------------------------------------------------- -->
+
+
+    <!-- owl輪播必要引入 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href=" https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightcase/2.5.0/css/lightcase.min.css"> -->
+
+
+
+
+
+
+    <link rel="stylesheet" href="plugin/hotel-datepicker-master/hotel-datepicker-master/dist/css/hotel-datepicker.css">
+
+
+    <!-- -------------------------------------------------------------- -->
+    <!-- 今次切版的css -->
+    <link rel="stylesheet" href="stylesheets/css/all.css" />
+
+
+</head>
+
+<body>
+
+
+
+
+
+    <div class="wrapper d-none">
+
+        <!-- <div class="room_info ">
+            <div class="room_left">
+
+
+
+                <a href="index.html" class="backpage">
+                    查看其它房型</a>
+
+        <div class="owl-carousel owl-theme d-flex justify-content-center" style="align-items: center;">
+
+
+            <div class="owl-item-control"><a data-lightbox="roadtrip" class="" href="${roomData.imageUrl[0]}">
+                    <img class="img-thumbnail" src="${roomData.imageUrl[0]}" alt="Slideshow Example 1" />
+                </a>
+            </div>
+
+
+            <div class="owl-item-control"><a data-lightbox="roadtrip" class="" href="${roomData.imageUrl[1]}">
+                    <img class="img-thumbnail" src="${roomData.imageUrl[1]}" alt="Slideshow Example 2" />
+                </a>
+            </div>
+
+
+            <div class="owl-item-control"><a data-lightbox="roadtrip" class="" href="${roomData.imageUrl[2]}">
+                    <img class="img-thumbnail" src="${roomData.imageUrl[2]}" alt="Slideshow Example 3" />
+                </a>
+            </div>
+
+
+        </div>
+                
+                
+
+
+                <div class="booking_position">
+                    <p>
+                        <span>$1,380</span>
+                        <span>1晚</span>
+                    </p>
+
+                    <button onclick="openPage()" type="button" class="book_btn">Booking
+                        now</button>
+                </div>
+                <div class="photo-txt">
+                </div>
+            </div>
+
+            <div class="room_right ">
+                <article class="proitem-detail">
+
+                    <div class="proitem-sort">
+                        <div class="room_title">
+                            <h1 class="">Single Room</h1>
+                            <small>1人・ 單人床・ 附早餐・衛浴1間・18平方公尺</small>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="proitem-sort">
+
+                        <div class="sort-wrap">
+                            <div class="proitem-info">
+
+                                <div class="info-list">
+                                    <p>
+                                        平日（一～四）價格：1380 / 假日（五〜日）價格：1500
+                                    </p>
+                                    <p>
+                                        入住時間：15:00（最早）/ 19:00（最晚）
+                                    </p>
+                                    <p>
+                                        退房時間：10:00
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="proitem-sort">
+
+                        <div class="sort-item">
+                            <div class="supply-content">
+                                <ul style="list-style-type: disc;">
+                                    <li>單人間僅供一位客人使用</li>
+                                    <li>臥室配有單人床和私人浴室</li>
+                                    <li>您需要的一切為您準備：床單和毯子，肥皂和洗髮水，吹風機</li>
+                                    <li>房間裡有AC，當然還有WIFI</li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <br>
+
+                    <div class="proitem-sort mt-1">
+                        <div class="sort-item">
+
+                            <ul class="supply-icon-zone">
+
+
+
+                                <li>
+                                    <div class="main-icon">
+                                        <img src="images/room/right/show/breakfastTrue.svg" alt="">
+                                    </div>
+                                    <img class="status-icon" src="images/room/right/status/ok.svg" alt="">
+                                </li>
+                                <li class="hide_icon">
+                                    <div class="main-icon">
+                                        <img src="images/room/right/show/mini-barTrue.svg" alt="">
+                                    </div>
+                                    <img class="status-icon" src="images/room/right/status/cancel.svg" alt="">
+                                </li>
+                                <li class="hide_icon">
+                                    <div class="main-icon">
+                                        <img src="images/room/right/show/room-serviceTrue.svg" alt="">
+                                    </div>
+                                    <img class="status-icon" src="images/room/right/status/cancel.svg" alt="">
+                                </li>
+                                <li>
+                                    <div class="main-icon">
+                                        <img src="images/room/right/show/breakfastTrue.svg" alt="">
+                                    </div>
+                                    <img class="status-icon" src="images/room/right/status/ok.svg" alt="">
+                                </li>
+                                <li>
+                                    <div class="main-icon">
+                                        <img src="images/room/right/show/breakfastTrue.svg" alt="">
+                                    </div>
+                                    <img class="status-icon" src="images/room/right/status/ok.svg" alt="">
+                                </li>
+                                <li>
+                                    <div class="main-icon">
+                                        <img src="images/room/right/show/breakfastTrue.svg" alt="">
+                                    </div>
+                                    <img class="status-icon" src="images/room/right/status/ok.svg" alt="">
+                                </li>
+                                <li>
+                                    <div class="main-icon">
+                                        <img src="images/room/right/show/breakfastTrue.svg" alt="">
+                                    </div>
+                                    <img class="status-icon" src="images/room/right/status/ok.svg" alt="">
+                                </li>
+                                <li>
+                                    <div class="main-icon">
+                                        <img src="images/room/right/show/breakfastTrue.svg" alt="">
+                                    </div>
+                                    <img class="status-icon" src="images/room/right/status/ok.svg" alt="">
+                                </li>
+                                <li>
+                                    <div class="main-icon">
+                                        <img src="images/room/right/show/breakfastTrue.svg" alt="">
+                                    </div>
+                                    <img class="status-icon" src="images/room/right/status/ok.svg" alt="">
+                                </li>
+                                <li>
+                                    <div class="main-icon">
+                                        <img src="images/room/right/show/breakfastTrue.svg" alt="">
+                                    </div>
+                                    <img class="status-icon" src="images/room/right/status/ok.svg" alt="">
+                                </li>
+
+                                <br>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+
+
+                <div class="date_pick">
+                    <input value="暫時放置" id="input_range" type="text">
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="cover d-none">
+
+
+            <div class="order_info">
+                <div class="left_order">
+
+
+                    <div class="order_keyinfo">
+                        <div>
+                            <p>姓名</p>
+                            <input class="basic-slide" id="email" type="text" placeholder="電子信箱/手機號碼" /><label
+                                for="email"></label>
+                        </div>
+                    </div>
+                    <div class="order_keyinfo">
+                        <div>
+                            <p>手機號碼</p>
+                            <input class="basic-slide" id="email" type="text" placeholder="電子信箱/手機號碼" /><label
+                                for="email"></label>
+                        </div>
+                    </div>
+                    <div class="order_keyinfo">
+                        <div>
+                            <p>入住日期</p>
+
+                            <button type="button" id="input_start">2022 - 9 - 06</button>
+
+                        </div>
+                    </div>
+
+
+                    <div class="date_range_insidezone">
+                    </div>
+
+                    <div class="order_keyinfo">
+                        <div>
+                            <p>退房日期</p>
+                            <button type="button" id="input_end">2022 - 9 - 06</button>
+
+                        </div>
+                    </div>
+                    <div class="order_keyinfo">
+                        <P class="calc_date">37天，21晚平日，15晚假日</P>
+                    </div>
+                    <div class="order_keyinfo">
+                        <div class="order_total">
+                            <p>總計</p>
+                            <p>$1,380</p>
+                        </div>
+                    </div>
+                    <div class="order_keyinfo">
+                        <div class="order_submit">
+                            <button><span>確認送出</span></button>
+                        </div>
+                    </div>
+                    <div class="order_keyinfo">
+                        <div class="order_tip">
+                            <span>此預約系統僅預約功能，並不會對您進行收費</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="right_order">
+
+
+
+                    <button onclick="exitPage()" class="exitbtn" type="button">
+                        <img src="images/room/right/info/exit.svg" alt="">
+                    </button>
+
+
+
+
+
+                    <div class="order_room_info">
+                        <div class="text_decorate">
+                            <h2>Single Room</h2>
+
+
+                            <p>1人・ 單人床・附早餐・ 衛浴1間・18平方公尺</p>
+                            <p>平日（一～四）價格：1380 / 假日（五〜日）價格：1500</p>
+                        </div>
+
+
+                        <ul class="order_icon_describe">
+                            <li><img src="images/room/right/show/breakfastTrue.svg" alt=""></li>
+                            <li><img src="images/room/right/show/wifiTrue.svg" alt=""></li>
+                            <li><img src="images/room/right/show/no-smokingTrue.svg" alt=""></li>
+                            <li><img src="images/room/right/show/breakfastTrue.svg" alt=""></li>
+                            <li><img src="images/room/right/show/breakfastTrue.svg" alt=""></li>
+                            <li><img src="images/room/right/show/no-smokingTrue.svg" alt=""></li>
+                            <li><img src="images/room/right/show/air-conditionerTrue.svg" alt=""></li>
+
+
+                        </ul>
+                    </div>
+
+                    <div class="order_room_info">
+                        <div class="text_decorate">
+                            <h3>訂房資訊</h3>
+                        </div>
+
+                        <ul class="order_info_describe" style="list-style-type: disc;">
+
+                            <li>入住時間：最早15：00，最晚21：00；退房時間：10：00，請自行確認行程安排。</li>
+                            <li>平日定義週一至週四；假日定義週五至週日及國定假日。</li>
+                            <li>好室旅店全面禁止吸菸。</li>
+                            <li>若您有任何問題，歡迎撥打 03-8321155 ( 服務時間
+                                週一至週六 10:00 - 18:00 )。</li>
+                        </ul>
+
+                    </div>
+                    <div class="order_room_info">
+                        <div class="text_decorate">
+                            <h3>預約流程</h3>
+                        </div>
+
+                        <div class="order_process">
+
+                            <div class="step">
+                                <div class="step_topbg">
+                                    <img src="images/room/right/info/step1.svg" alt="">
+                                </div>
+                                <div class="step_bottominfo">
+                                    <p>送出線上預約單</p>
+                                </div>
+                            </div>
+
+                            <div class="next_icon">
+                                <img src="images/room/right/info/arrow.svg" alt="">
+                            </div>
+
+
+                            <div class="step">
+                                <div class="step_topbg">
+                                    <img src="images/room/right/info/step2.svg" alt="">
+                                </div>
+                                <div class="step_bottominfo">
+                                    <p>系統立即回覆是否預訂成功</p>
+                                    <p>並以簡訊發送訂房通知</p>
+                                    <p>(若未收到簡訊請來電確認)</p>
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="next_icon">
+                                <img src="images/room/right/info/arrow.svg" alt="">
+                            </div>
+
+                            <div class="step">
+                                <div class="step_topbg">
+                                    <img src="images/room/right/info/step3.svg" alt="">
+                                </div>
+                                <div class="step_bottominfo">
+                                    <p>入住當日憑訂房通知</p>
+                                    <p>以現金或刷卡付款即可</p>
+                                    <p>(僅接受VISA.JCB.銀聯卡)</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+
+
+
+
+
+    <!-- -------- -->
+
+    <div class="loading">
+        <span class="loader">Loading</span>
+    </div>
+
+    <!-- -------- -->
+
+
+
+
+
+
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
+    <!-- 燈箱 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox-plus-jquery.min.js"></script>
+
+
+
+    <!-- owl輪播必要引入 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- ---------------- -->
+
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
+
+
+
+
+    <script src="plugin/fecha-4.2.1/fecha-4.2.1/lib/fecha.js"></script>
+    <script src="plugin/fecha-4.2.1/fecha-4.2.1/dist/fecha.min.js"></script>
+    <script src="plugin/hotel-datepicker-master/hotel-datepicker-master/dist/js/hotel-datepicker.min.js"></script>
+
+
+
+    <!-- ------------------------------------- -->
+    <script src="js/config.js"></script>
+    <!-- 套件放到最前面 這是axios-->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- ------------------------------------- -->
+
+
+    <!-- <script src="js/index.js"></script> -->
+    <!-- 沒有互吃變數就關掉 -->
+
+
+
+    <!-- ------------------------------------- -->
+    <script src="js/date.js"></script>
+    <script src="js/effect.js"></script>
+    <script src="js/room.js"></script>
+    <script src="js/btnevent.js"></script>
+    <script src="js/form.js"></script>
+    <!-- ------------------------------------- -->
+
+
+
+
+
+ 
+
+
+ 
+
+</body>
+
+</html>
