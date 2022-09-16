@@ -6,17 +6,18 @@ let combinDate = '';
 
 let getDateValue = '';
 
-function dontallow3monthafter() { 
+function dontallow3monthafter() {
     let getNow = new Date();
     nowTiming = getNow.getTime()
-
 
     nowTimingPlus90 = nowTiming + 7776000000;
     dataTiming = new Date(nowTimingPlus90);
 
     combinDate = `${dataTiming.getFullYear()}-${dataTiming.getMonth() + 1}-${dataTiming.getDate()}`
-    
+
     console.log(combinDate)
+    console.log(typeof combinDate)
+    return combinDate
 }
 dontallow3monthafter();
 
@@ -28,8 +29,7 @@ function dateShow() {
     // let input_range = document.getElementById('input_range');
     let input_range = document.querySelector('#input_range');
 
-  
-   
+
 
     let datepicker = new HotelDatepicker(input_range, {
         inline: true,
@@ -41,7 +41,7 @@ function dateShow() {
 
 
 
-        endDate: '2022-12-04',  //假資料
+        endDate: dontallow3monthafter(),  //假資料
         // endDate: 2022 - 09 - 29
 
 
@@ -77,7 +77,7 @@ function dateShow() {
         //     button: 'Close',
         //     clearButton: 'Clear',
         //     submitButton: 'Submit',
-           
+
         // },
 
         onDayClick: function () {
@@ -95,7 +95,13 @@ function dateShow() {
             // console.log(datepicker.getValue());
         }
     });
- 
+
+
+    // console.log(datepicker);
+    // console.log(datepicker.endDate);
+
+    // return datepicker;
+
 }
 
 

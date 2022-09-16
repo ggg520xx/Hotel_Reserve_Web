@@ -28,8 +28,8 @@ function getIndexroom() {
             console.log("有收到資料回傳了");
             console.log(response);
             console.log(response.data.items);
-            
-            removeDnone()
+
+
             indexData = response.data.items; // 找到我要的資料 把它放進我的陣列
 
             // ------------------
@@ -47,6 +47,9 @@ function getIndexroom() {
             })
             // ------------------
             indexRoom.innerHTML = str;
+
+
+            removeDnone();
         });
 }
 

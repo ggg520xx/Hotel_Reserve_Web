@@ -102,7 +102,6 @@ function iconObjtoAry() {
     iconAry = Object.keys(showSupply);
     sortAll();
 }
-
 // -------------------------------
 // 做系統性的分類
 let newArray = [];

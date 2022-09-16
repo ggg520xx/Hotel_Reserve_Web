@@ -7,10 +7,11 @@ let newAryDate = [];
 
 function reGetDate() {
     let newTextDate = getDateValue.replace(" - ", ",");
-    newAryDate = newTextDate.split(',');
+    //套件取到的點擊兩天 更改他的中間顯示 
+    newAryDate = newTextDate.split(','); //並把兩個字串拆分成陣列
 
     // console.log(newAryDate)
-    calcPagePrice()
+    calcPagePrice();
 
 }
 
@@ -33,16 +34,15 @@ function calcPagePrice() {
 
 
 
-
+    // 兩個間隔數天的陣列 分別賦值 給兩個變數
     let aa = newAryDate[0]
     let bb = newAryDate[1]
 
-    // getDateBetween(aa,bb)
 
-    pagePriceAry = getDateBetween(aa, bb)
+    pagePriceAry = getDateBetween(aa, bb) //列出中間間隔的每一天
     // console.log(pagePriceAry)
 
-    pagePriceAry.pop()
+    pagePriceAry.pop();  //拿掉最後一天 不算住宿
     // let newswitchAry = pagePriceAry.replace("-", " ");
 
     // console.log(newswitchAry)
@@ -51,16 +51,18 @@ function calcPagePrice() {
 
 
 
-        
+
 
         let a = item.replace(/-/g, " ");   // 正則去除 - 然後轉毫秒 算禮拜幾
         // console.log(a)
-
+        
+        // 要使用轉毫秒的話 不能有中間的槓槓 上面正則拿掉
         millisecond = Date.parse(a);
 
         // console.log(millisecond);
 
         dateCatch = new Date(millisecond);
+        // 轉成標準時間
 
         totalPrice = dateCatch.getDay()
 
@@ -117,7 +119,7 @@ function calcPagePrice() {
     // rea;
     // realTotal = (holidayNum * roomData.holidayPrice) + (normalNum * roomData.normalDayPrice)
 
-   
+
 
 
 
@@ -128,7 +130,7 @@ function calcPagePrice() {
     document.querySelector("#howManyNight").textContent = calcHowMany;  //幾晚
 
 
-    document.querySelector("#totalday").textContent = calcHowMany+1;  //總天數
+    document.querySelector("#totalday").textContent = calcHowMany + 1;  //總天數
     document.querySelector("#normalday").textContent = normalNum;
     document.querySelector("#holiday").textContent = holidayNum;
 
@@ -156,8 +158,8 @@ function toThousands(x) {
 
 
 function validatePhone(phone) {
-  if (/^[09]{2}\d{8}$/.test(phone)) {
-    return true;
-  }
-  return false;
+    if (/^[09]{2}\d{8}$/.test(phone)) {
+        return true;
+    }
+    return false;
 }
