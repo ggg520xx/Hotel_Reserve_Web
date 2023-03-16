@@ -1,4 +1,4 @@
-// 不允許90天之後(出問題 塞不進去)
+// 不允許90天之後
 let nowTiming
 let nowTimingPlus90
 let dataTiming
@@ -41,7 +41,7 @@ function dateShow() {
 
 
 
-        endDate: dontallow3monthafter(),  //假資料
+        endDate: dontallow3monthafter(), 
         // endDate: 2022 - 09 - 29
 
 

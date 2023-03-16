@@ -91,6 +91,7 @@ function timeCatch() {
 // 先做篩選資料 物件資料蒐集 抓出屬性之類
 
 
+
 let showSupply = {};
 let iconAry = [];
 
