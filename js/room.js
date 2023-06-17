@@ -264,6 +264,11 @@ function renderRoom() {
 
                     <button onclick="openPage()" type="button" class="book_btn">Booking
                         now</button>
+
+
+                    <p class="mt-3">
+                       （ 禮拜五、六、日 ）當晚入住皆列為假日計算
+                    </p>
                 </div>
                 <div class="photo-txt">
                 </div>

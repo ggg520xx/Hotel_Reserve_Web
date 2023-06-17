@@ -313,8 +313,8 @@ datepicker__buttons {
 
 @media (min-width: 768px) {
   .datepicker--topbar-has-close-button .datepicker__info,
-.datepicker--topbar-has-clear-button .datepicker__info,
-.datepicker--topbar-has-submit-button .datepicker__info {
+  .datepicker--topbar-has-clear-button .datepicker__info,
+  .datepicker--topbar-has-submit-button .datepicker__info {
     max-width: 325px;
   }
 }
